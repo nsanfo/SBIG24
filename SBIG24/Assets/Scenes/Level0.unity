@@ -278,6 +278,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150a286bd24cea549a8b49c2d594d90f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &641139061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8970612074298402683, guid: f14c2d56e2dd2e14f9381eef19d5af88,
+    type: 3}
+  m_PrefabInstance: {fileID: 6416769881535987570}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1243525522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1243525524}
+  - component: {fileID: 1243525523}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1243525523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243525522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3951be13c96facf4ebca48d279930308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 40
+  NumOfWires: 3
+  WireSpacing: 2
+  SpawnerDistanceFromScreen: 5
+  Player: {fileID: 1747977000}
+  WireSpawner: {fileID: 641139061}
+--- !u!4 &1243525524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243525522}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1259785305
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +471,12 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &1747977000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 854968154610894606, guid: 582c348f1dce7a144a9b1b0af3d5910b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2771410949360379344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2096325641
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +753,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4593362638138414920, guid: f14c2d56e2dd2e14f9381eef19d5af88,
         type: 3}
+      propertyPath: numWires
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4593362638138414920, guid: f14c2d56e2dd2e14f9381eef19d5af88,
+        type: 3}
       propertyPath: distanceFromScreen
       value: 5
       objectReference: {fileID: 0}
@@ -714,3 +781,4 @@ SceneRoots:
   - {fileID: 375616221}
   - {fileID: 6416769881535987570}
   - {fileID: 635377966}
+  - {fileID: 1243525524}
