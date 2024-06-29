@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.poiyomi.toon": {
+      "version": "https://github.com/poiyomi/PoiyomiToonShader.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b9a5bc01f91920158ae7f4a5ed45aa00ae3af7ad"
+    },
     "com.unity.burst": {
       "version": "1.8.15",
       "depth": 1,
