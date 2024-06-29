@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7927632231092191231}
   - component: {fileID: 6780858887812014527}
+  - component: {fileID: 2216868244300104409}
   m_Layer: 0
-  m_Name: Wires
+  m_Name: WiresSection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,4 +50,25 @@ MonoBehaviour:
   WireDespawnDistance: 2
   WireSpawnDistance: 2
   pos: 0
-  MovementSpeed: 2
+  MovementSpeed: 10
+--- !u!65 &2216868244300104409
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9067082036340567058}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 5, z: 1}
+  m_Center: {x: 0, y: 0, z: -5}

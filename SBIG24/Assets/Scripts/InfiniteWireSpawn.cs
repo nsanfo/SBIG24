@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class InfiniteWireSpawn : MonoBehaviour
@@ -13,7 +14,7 @@ public class InfiniteWireSpawn : MonoBehaviour
     public int WireDespawnDistance = 2;
     public int WireSpawnDistance = 2;
     public int pos = 0;
-    public int MovementSpeed = 2;
+    public float MovementSpeed = 0.01f;
     
     private void Start()
     {
@@ -21,13 +22,12 @@ public class InfiniteWireSpawn : MonoBehaviour
 
         for (int i = -numLR; i <= numLR; i++)
         {
-            Instantiate(WireObj, new Vector3(i * WireGap, transform.position.y, transform.position.z), Quaternion.identity);
+            GameObject wireObj = Instantiate(WireObj, new Vector3(i * WireGap, transform.position.y, transform.position.z), Quaternion.identity, this.transform);
         }
-
     }
 
-    private void LayDownSection()
-    {
-
+    private void Update() {
+        //Move 
+        transform.position += -transform.forward * MovementSpeed * Time.deltaTime;
     }
 }
