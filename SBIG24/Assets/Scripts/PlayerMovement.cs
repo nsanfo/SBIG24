@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public GameObject LeftTarget;
-    public GameObject RightTarget;
+    //Which wire the player is on, initialized at 0(Middle).
+        //-1 = Left
+        //1 = Right
+    private int PlayerPos = 0;
+    
+    //Number of wires in the level
+        //Mutable in Editor
+    public int NumWires = 3;
+    
+    //Space between the wires
+        //Mutable in Editor
+    public int WireSpacing = 2;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A)){
@@ -26,12 +29,26 @@ public class PlayerMovement : MonoBehaviour
 
     void GoLeft()
     {
-        Debug.Log("Left");
-        gameObject.transform.position = new Vector3(transform.position.x - 2, transform.position.y, transform.position.z);
+        //If the position is not at the last possible left wire...
+        if (PlayerPos > -(NumWires/2))
+        {
+            //Move player 2 units to the left on the x axis.
+            gameObject.transform.position = new Vector3(transform.position.x - WireSpacing, transform.position.y, transform.position.z);
+
+            //Update player position by decrementing by 1
+            PlayerPos -= 1;
+        }
     }
     void GoRight()
     {
-        gameObject.transform.position = new Vector3(transform.position.x + 2, transform.position.y, transform.position.z);
-        Debug.Log("Right");
+        //If the position is not at the last possible right wire...
+        if (PlayerPos < (NumWires/2))
+        {
+            //Move player 2 units to the right on the x axis.
+            gameObject.transform.position = new Vector3(transform.position.x + WireSpacing, transform.position.y, transform.position.z);
+
+            //Update player position by incrementing by 1
+            PlayerPos += 1;
+        }
     }
 }
