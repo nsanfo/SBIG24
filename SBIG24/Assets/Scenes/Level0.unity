@@ -278,12 +278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150a286bd24cea549a8b49c2d594d90f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &641139061 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8970612074298402683, guid: f14c2d56e2dd2e14f9381eef19d5af88,
-    type: 3}
-  m_PrefabInstance: {fileID: 6416769881535987570}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1243525522
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,9 +310,6 @@ MonoBehaviour:
   Speed: 40
   NumOfWires: 3
   WireSpacing: 2
-  SpawnerDistanceFromScreen: 5
-  Player: {fileID: 1747977000}
-  WireSpawner: {fileID: 641139061}
 --- !u!4 &1243525524
 Transform:
   m_ObjectHideFlags: 0
@@ -471,12 +462,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!1 &1747977000 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 854968154610894606, guid: 582c348f1dce7a144a9b1b0af3d5910b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2771410949360379344}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2096325641
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +658,11 @@ PrefabInstance:
       propertyPath: WireSpacing
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7391311626815509934, guid: 582c348f1dce7a144a9b1b0af3d5910b,
+        type: 3}
+      propertyPath: gameManagerScript
+      value: 
+      objectReference: {fileID: 1243525523}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -709,7 +699,7 @@ PrefabInstance:
     - target: {fileID: 342598308586165149, guid: f14c2d56e2dd2e14f9381eef19d5af88,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 342598308586165149, guid: f14c2d56e2dd2e14f9381eef19d5af88,
         type: 3}
@@ -756,6 +746,17 @@ PrefabInstance:
       propertyPath: numWires
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4593362638138414920, guid: f14c2d56e2dd2e14f9381eef19d5af88,
+        type: 3}
+      propertyPath: wiresSection
+      value: 
+      objectReference: {fileID: 9067082036340567058, guid: a01be4e7b53dc1b4c86d3dc930c797fc,
+        type: 3}
+    - target: {fileID: 4593362638138414920, guid: f14c2d56e2dd2e14f9381eef19d5af88,
+        type: 3}
+      propertyPath: gameManagerScript
+      value: 
+      objectReference: {fileID: 1243525523}
     - target: {fileID: 4593362638138414920, guid: f14c2d56e2dd2e14f9381eef19d5af88,
         type: 3}
       propertyPath: distanceFromScreen

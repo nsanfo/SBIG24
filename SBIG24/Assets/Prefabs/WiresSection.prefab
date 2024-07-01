@@ -66,6 +66,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc25ed026b77d04f9e9d23343a992ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WireObj: {fileID: 4532461241826629976, guid: 9dad2f83b5c41c140a51e228f5f49be8, type: 3}
-  NumOfWires: 3
-  MovementSpeed: 40
+  gameManagerScript: {fileID: 0}
+  wire: {fileID: 4532461241826629976, guid: 9dad2f83b5c41c140a51e228f5f49be8, type: 3}
