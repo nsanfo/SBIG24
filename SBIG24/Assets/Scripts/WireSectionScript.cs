@@ -7,6 +7,7 @@ public class WireSectionScript : MonoBehaviour
     public GameManagerScript gameManagerScript;
     public GameObject wire;
     
+    
     private void Awake() {
         gameManagerScript = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
         spawnWires();

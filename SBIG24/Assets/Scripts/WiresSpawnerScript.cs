@@ -14,14 +14,11 @@ public class WiresSpawnerScript : MonoBehaviour
     }
 
     private void Update() {
-        if (canSpawn)
-        {
+        if (canSpawn){
             spawn();
         }
     }
-
-    private void spawn()
-    {
+    private void spawn(){
         GameObject section = Instantiate(wiresSection, transform.position, Quaternion.identity);
         WireSectionScript wireSectionScript = section.GetComponent<WireSectionScript>();
 
@@ -30,6 +27,8 @@ public class WiresSpawnerScript : MonoBehaviour
     }
 
     private void OnTriggerExit(Collider other) {
-        canSpawn = true;
+        if (other.gameObject.name == "Wire(Clone)"){
+            canSpawn = true;
+        }
     }
 }

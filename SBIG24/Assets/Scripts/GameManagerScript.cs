@@ -12,4 +12,12 @@ public class GameManagerScript : MonoBehaviour
 
     //Global Spacing Between Wires
     public int WireSpacing = 2;
+
+    public int jumpHeight;
+    public float jumpSpeed = 2f;
+    public float airTime = 0.1f;
+
+    public float clearWireChance = 0.5f;
+    public float obstacleChance = 0.3f;
+    public float whichObstacleChance = 0.5f;
 }

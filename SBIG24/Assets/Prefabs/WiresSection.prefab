@@ -68,3 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManagerScript: {fileID: 0}
   wire: {fileID: 4532461241826629976, guid: 9dad2f83b5c41c140a51e228f5f49be8, type: 3}
+  ObstacleShort: {fileID: 8460274190372519795, guid: 84025770503142a42935cfd0e0dc3419,
+    type: 3}
+  ObstacleTall: {fileID: 4497078605941843324, guid: 122a0da98efb2e844941ff9d6be3a71f,
+    type: 3}
