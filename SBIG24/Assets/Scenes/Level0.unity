@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 40
-  NumOfWires: 3
+  NumOfWires: 5
   WireSpacing: 2
   jumpHeight: 1
   jumpSpeed: 4
