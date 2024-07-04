@@ -498,7 +498,7 @@ Material:
     - _Tweak_MatcapMaskLevel: 0
     - _Tweak_RimLightMaskLevel: 0
     - _Tweak_ShadingGradeMapLevel: 0
-    - _Tweak_SystemShadowsLevel: 0.069
+    - _Tweak_SystemShadowsLevel: 0.142
     - _Tweak_transparency: 0
     - _UVBase: 0
     - _UVDetail: 0
