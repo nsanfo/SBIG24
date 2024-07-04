@@ -12,6 +12,8 @@ public class GUIManager : MonoBehaviour
     public InputAction navigationAction;
     public static PlayerInput playerInput;
 
+    public GameObject MMOptionsPanel;
+
     private void Awake() {
         //if it doesn't already exist...
         if (instance == null){
@@ -34,12 +36,16 @@ public class GUIManager : MonoBehaviour
         SceneManager.LoadScene("Level0");
     }
 
-    public void Options(){
-        Debug.Log("Options Menu!");
+    public void MMOptions(){
+        MMOptionsPanel.SetActive(!MMOptionsPanel.activeInHierarchy);
     }
 
     public void Quit(){
-        Debug.Log("Exit Game!");
+        Application.Quit();
+    }
+
+    public void MMBack(){
+        MMOptionsPanel.SetActive(!MMOptionsPanel.activeInHierarchy);
     }
     //END BUTTONS//
 }
