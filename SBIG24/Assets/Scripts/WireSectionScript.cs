@@ -20,6 +20,7 @@ public class WireSectionScript : MonoBehaviour
     private void spawnWires()
     {
         int halfWires = gameManagerScript.NumOfWires/2;
+        GameObject[] wires = new GameObject[gameManagerScript.NumOfWires];
 
         for (int i = -halfWires; i <= halfWires; i++)
         {

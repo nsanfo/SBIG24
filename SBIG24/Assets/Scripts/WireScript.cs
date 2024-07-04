@@ -9,25 +9,32 @@ public class WireScript : MonoBehaviour
     public GameObject[] obstaclePositions;
     public GameObject ObstacleShort;
     public GameObject ObstacleTall;
+    public GameObject[] Obstacles;
 
     
 
     private void Awake() {
+        
         gameManagerScript = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
         clearWire = getBoolByChance(gameManagerScript.clearWireChance);
+        
         fillObstacles();
+        
     }
 
     
     private void fillObstacles(){
+        
         if (clearWire){
             return;
         }
-
+        
+        
         for (int i = 0; i < obstaclePositions.Length; i++){
             if (getBoolByChance(gameManagerScript.obstacleChance)){
                 
                 if (getBoolByChance(gameManagerScript.whichObstacleChance)){
+                    
                     Instantiate(ObstacleShort, obstaclePositions[i].transform.position, Quaternion.identity, transform);
                 }
                 else{

@@ -833,6 +833,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2425898043629017435, guid: 582c348f1dce7a144a9b1b0af3d5910b,
+        type: 3}
+      propertyPath: m_DefaultActionMap
+      value: ac9974f8-ccf1-43c6-b223-c53a634d3f7c
+      objectReference: {fileID: 0}
     - target: {fileID: 2666236797018363456, guid: 582c348f1dce7a144a9b1b0af3d5910b,
         type: 3}
       propertyPath: gameManagerScript

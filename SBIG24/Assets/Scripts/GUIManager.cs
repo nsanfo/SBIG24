@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GUIManager : MonoBehaviour
 {
     //Instance of the GUI Manager, to check if it already exists or not
     private static GUIManager instance = new GUIManager();
+    public Vector2 NavigationInput {get; set;}
+    public InputAction navigationAction;
+    public static PlayerInput playerInput;
 
     private void Awake() {
         //if it doesn't already exist...
@@ -22,8 +27,11 @@ public class GUIManager : MonoBehaviour
         }
     }
 
+
+
+    //BUTTONS//
     public void Play(){
-        Debug.Log("Play Game!");
+        SceneManager.LoadScene("Level0");
     }
 
     public void Options(){
@@ -33,4 +41,5 @@ public class GUIManager : MonoBehaviour
     public void Quit(){
         Debug.Log("Exit Game!");
     }
+    //END BUTTONS//
 }
