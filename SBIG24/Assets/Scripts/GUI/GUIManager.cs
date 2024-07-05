@@ -14,18 +14,11 @@ public class GUIManager : MonoBehaviour
     public static PlayerInput playerInput;
 
     public GameObject MMOptionsPanel;
-    public GameObject PausePanel;
-    public GameObject QuitQueryPanel;
 
     private PlayerControls playerControls;
 
     private void Start() {
         playerControls = new PlayerControls();
-    }
-
-    private void OnPause()
-    {
-        TogglePause();
     }
 
     //BUTTONS//
@@ -45,32 +38,5 @@ public class GUIManager : MonoBehaviour
         MMOptionsPanel.SetActive(!MMOptionsPanel.activeInHierarchy);
     }
 
-    public void TogglePause(){
-        PausePanel.SetActive(!PausePanel.activeInHierarchy);
-        MMOptionsPanel.SetActive(false);
-
-        if (PausePanel.activeInHierarchy){
-            
-            Time.timeScale = 0;
-        }
-        else{
-            Time.timeScale = 1;
-        }
-    }
-
-    public void ReturnMainMenu(){
-        QuitQueryPanel.SetActive(true);
-    }
-
-    public void MMYes(){
-        SceneManager.LoadScene("MainMenu");
-    }
-    public void MMNo(){
-        QuitQueryPanel.SetActive(false);
-    }
-
-    public void ResetGame(){
-        SceneManager.LoadScene("Level0");
-    }
     //END BUTTONS//
 }
