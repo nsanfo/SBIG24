@@ -7,18 +7,15 @@ using UnityEngine.UI;
 public class VolumeSettings : MonoBehaviour
 {
     public AudioMixer myMixer;
-    public GameObject OptionsPanel;
 
     public Slider masterSlider;
     public Slider musicSlider;
     public Slider SFXSlider;
 
-    private void Start() {
+    private void Awake() {
         SetMasterVolume();
         SetMusicVolume();
         SetSFXVolume();
-
-        OptionsPanel.SetActive(false);
     }
 
     public void SetMasterVolume(){
