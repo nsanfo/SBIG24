@@ -4,50 +4,30 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //Which wire the player is on, initialized at 0(Middle).
-        //-1 = Left
-        //1 = Right
+    public GameManagerScript gameManagerScript;
+    public Animator animator;
     private int PlayerPos = 0;
-    
-    //Number of wires in the level
-        //Mutable in Editor
-    public int NumWires = 3;
-    
-    //Space between the wires
-        //Mutable in Editor
-    public int WireSpacing = 2;
+    private PlayerControls playerControls;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A)){
-            GoLeft();
-        }
-        else if (Input.GetKeyDown(KeyCode.D)){
-            GoRight();
-        }
+    private void Start() {
+        playerControls = new PlayerControls();
     }
 
-    void GoLeft()
+    private void OnMoveLeft()
     {
-        //If the position is not at the last possible left wire...
-        if (PlayerPos > -(NumWires/2))
+        if (PlayerPos > -(gameManagerScript.NumOfWires/2))
         {
-            //Move player 2 units to the left on the x axis.
-            gameObject.transform.position = new Vector3(transform.position.x - WireSpacing, transform.position.y, transform.position.z);
+            gameObject.transform.position = new Vector3(transform.position.x - gameManagerScript.WireSpacing, transform.position.y, transform.position.z);
 
-            //Update player position by decrementing by 1
             PlayerPos -= 1;
         }
     }
-    void GoRight()
+    private void OnMoveRight()
     {
-        //If the position is not at the last possible right wire...
-        if (PlayerPos < (NumWires/2))
+        if (PlayerPos < (gameManagerScript.NumOfWires/2))
         {
-            //Move player 2 units to the right on the x axis.
-            gameObject.transform.position = new Vector3(transform.position.x + WireSpacing, transform.position.y, transform.position.z);
+            gameObject.transform.position = new Vector3(transform.position.x + gameManagerScript.WireSpacing, transform.position.y, transform.position.z);
 
-            //Update player position by incrementing by 1
             PlayerPos += 1;
         }
     }
