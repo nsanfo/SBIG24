@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerDie : MonoBehaviour
 {
     public GameManagerScript gameManagerScript;
+    public GameObject guiManager;
     public GameObject[] healthPips;
     public int health = 3;
 
@@ -53,6 +54,7 @@ public class PlayerDie : MonoBehaviour
         Debug.Log("Player has died!");
         gameObject.GetComponent<PlayerMovement>().playerCanMove = false;
         Time.timeScale = 0;
+        guiManager.GetComponent<LevelGUIManager>().GameOver();
     }
 
 }

@@ -16,8 +16,10 @@ public class LevelGUIManager : MonoBehaviour
     public GameObject OptionsPanel;
     public GameObject PausePanel;
     public GameObject QuitQueryPanel;
+    public GameObject GameOverPanel;
 
     private PlayerControls playerControls;
+    private bool canPause = true;
 
     private void Start() {
         playerControls = new PlayerControls();
@@ -26,6 +28,12 @@ public class LevelGUIManager : MonoBehaviour
     private void OnPause()
     {
         TogglePause();
+    }
+
+    public void GameOver()
+    {
+        GameOverPanel.SetActive(true);
+        canPause = false;
     }
 
     //BUTTONS//
@@ -46,6 +54,7 @@ public class LevelGUIManager : MonoBehaviour
     }
 
     public void TogglePause(){
+        if (!canPause){ return; }
         PausePanel.SetActive(!PausePanel.activeInHierarchy);
         OptionsPanel.SetActive(false);
 
@@ -71,8 +80,11 @@ public class LevelGUIManager : MonoBehaviour
         QuitQueryPanel.SetActive(false);
     }
 
-    public void ResetGame(){
+    public void TryAgain(){
+        GameOverPanel.SetActive(false);
         SceneManager.LoadScene("Level0");
+        canPause = true;
     }
+
     //END BUTTONS//
 }
