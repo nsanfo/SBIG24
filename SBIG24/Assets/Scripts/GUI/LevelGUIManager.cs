@@ -58,7 +58,6 @@ public class LevelGUIManager : MonoBehaviour
         PausePanel.SetActive(!PausePanel.activeInHierarchy);
         OptionsPanel.SetActive(false);
 
-
         if (PausePanel.activeInHierarchy){
             Player.GetComponent<PlayerMovement>().playerCanMove = false;
             Time.timeScale = 0;

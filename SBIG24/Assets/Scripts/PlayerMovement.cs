@@ -15,18 +15,17 @@ public class PlayerMovement : MonoBehaviour
     private PlayerControls playerControls;
     public TMP_Text pointsDisplay;
     private int points = 0;
-    private int pointsMultiplier = 1;
+    public int pointsMultiplier = 0;
     public bool isGrinding = false;
-    
+    public Color oneXColor;
+    public Color twoXColor;
+    public Color threeXColor;
+    public AudioSource[] activeRails;
 
     private void Start() {
         playerControls = new PlayerControls();
         InvokeRepeating("UpdatePoints", 0, gameManagerScript.pointInterval);
         InvokeRepeating("playRailGrindSFX", 0, 2.3f);
-    }
-
-    private void Update() {
-        
     }
 
     private void playRailGrindSFX(){
@@ -39,6 +38,20 @@ public class PlayerMovement : MonoBehaviour
         if (isGrinding){
             points = points + (100 * pointsMultiplier);
             pointsDisplay.text = points.ToString();
+
+            switch(pointsMultiplier){
+            case <= 1:
+            pointsDisplay.color = oneXColor;
+            break;
+            
+            case 2:
+            pointsDisplay.color = twoXColor;
+            break;
+
+            case >= 3:
+            pointsDisplay.color = threeXColor;
+            break;
+        }
         }
     }
 

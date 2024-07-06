@@ -21,4 +21,5 @@ public class GameManagerScript : MonoBehaviour
     public float obstacleChance = 0.3f;
     public float whichObstacleChance = 0.5f;
     public float pointInterval = 1.0f;
+    public float musicFalloff = 0.5f;
 }

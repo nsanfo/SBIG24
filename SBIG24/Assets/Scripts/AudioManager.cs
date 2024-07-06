@@ -8,13 +8,10 @@ public class AudioManager : MonoBehaviour
     private static AudioManager instance = new AudioManager();
     public AudioSource musicSource;
     public AudioSource SFXSource;
+    public AudioSource[] musicActivators;
     public AudioClip fallingPipe;
     public AudioClip railGrind;
     public AudioClip jumpWhoosh;
-
-    private void Start() {
-
-    }
 
     private void Awake() {
         if (instance == null)

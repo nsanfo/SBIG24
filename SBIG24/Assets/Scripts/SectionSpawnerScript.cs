@@ -16,7 +16,6 @@ public class SectionSpawnerScript : MonoBehaviour
         }
     }
     private void OnTriggerExit(Collider other) {
-        Debug.Log(other.transform.name);
         if (other.transform.tag == "Section"){
             canSpawn = true;
         }
