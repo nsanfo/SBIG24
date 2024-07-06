@@ -20,4 +20,5 @@ public class GameManagerScript : MonoBehaviour
     public float clearWireChance = 0.5f;
     public float obstacleChance = 0.3f;
     public float whichObstacleChance = 0.5f;
+    public float pointInterval = 1.0f;
 }

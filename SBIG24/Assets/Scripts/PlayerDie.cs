@@ -51,7 +51,6 @@ public class PlayerDie : MonoBehaviour
     }
 
     private void playerDies(){
-        Debug.Log("Player has died!");
         gameObject.GetComponent<PlayerMovement>().playerCanMove = false;
         Time.timeScale = 0;
         guiManager.GetComponent<LevelGUIManager>().GameOver();
