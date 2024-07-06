@@ -25,7 +25,7 @@ public class SectionSpawnerScript : MonoBehaviour
     
 
     private void spawnSection(){
-        Instantiate(Section, transform.position, Quaternion.identity);
+        Instantiate(Section, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z + 30), Quaternion.identity);
         canSpawn = false;
     }
 }
