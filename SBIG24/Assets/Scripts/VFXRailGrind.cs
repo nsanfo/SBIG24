@@ -11,11 +11,9 @@ public class VFXRailGrind : MonoBehaviour
     private void Update() {
         if (playerMovement.isGrinding){
             this.GetComponent<VisualEffect>().enabled = true;
-            Debug.Log("turn on VFX");
         }
         else{
             this.GetComponent<VisualEffect>().enabled = false;
-            Debug.Log("turn off VFX");
         }
     }
 }
