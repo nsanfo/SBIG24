@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public bool playerCanMove = true;
     public GameManagerScript gameManagerScript;
+    public AudioManager audioManagerScript;
     public Animator animator;
     private int PlayerPos = 0;
     private PlayerControls playerControls;
@@ -21,16 +22,23 @@ public class PlayerMovement : MonoBehaviour
     private void Start() {
         playerControls = new PlayerControls();
         InvokeRepeating("UpdatePoints", 0, gameManagerScript.pointInterval);
+        InvokeRepeating("playRailGrindSFX", 0, 2.3f);
     }
 
     private void Update() {
         
     }
 
+    private void playRailGrindSFX(){
+        if (isGrinding){
+            audioManagerScript.playClip(audioManagerScript.railGrind);
+        }
+    }
+
     private void UpdatePoints(){
         if (isGrinding){
             points = points + (100 * pointsMultiplier);
-        pointsDisplay.text = points.ToString();
+            pointsDisplay.text = points.ToString();
         }
     }
 
@@ -39,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
         if (!playerCanMove){
             return;
         }
+
+        audioManagerScript.playClip(audioManagerScript.jumpWhoosh);
 
         if (playerCanMove && PlayerPos > -(gameManagerScript.NumOfWires/2))
         {
@@ -52,6 +62,8 @@ public class PlayerMovement : MonoBehaviour
         if (!playerCanMove){
             return;
         }
+
+        audioManagerScript.playClip(audioManagerScript.jumpWhoosh);
 
         if (playerCanMove && PlayerPos < (gameManagerScript.NumOfWires/2))
         {

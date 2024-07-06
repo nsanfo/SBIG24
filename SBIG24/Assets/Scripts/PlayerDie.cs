@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerDie : MonoBehaviour
 {
     public GameManagerScript gameManagerScript;
+    public AudioManager audioManagerScript;
     public GameObject guiManager;
     public GameObject[] healthPips;
     public int health = 3;
@@ -17,6 +18,7 @@ public class PlayerDie : MonoBehaviour
 
     private void damagePlayer(){
         health--;
+        hurtSound();
 
         switch(health){
             case < 0:
@@ -54,6 +56,10 @@ public class PlayerDie : MonoBehaviour
         gameObject.GetComponent<PlayerMovement>().playerCanMove = false;
         Time.timeScale = 0;
         guiManager.GetComponent<LevelGUIManager>().GameOver();
+    }
+
+    public void hurtSound(){
+        audioManagerScript.playClip(audioManagerScript.fallingPipe);
     }
 
 }

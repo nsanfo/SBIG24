@@ -6,6 +6,15 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     private static AudioManager instance = new AudioManager();
+    public AudioSource musicSource;
+    public AudioSource SFXSource;
+    public AudioClip fallingPipe;
+    public AudioClip railGrind;
+    public AudioClip jumpWhoosh;
+
+    private void Start() {
+
+    }
 
     private void Awake() {
         if (instance == null)
@@ -18,5 +27,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    
+    public void playClip(AudioClip clip){
+        SFXSource.PlayOneShot(clip);
+    }
 }

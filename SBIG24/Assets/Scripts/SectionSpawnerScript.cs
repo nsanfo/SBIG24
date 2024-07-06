@@ -9,7 +9,6 @@ public class SectionSpawnerScript : MonoBehaviour
     private bool canSpawn = false;
 
     private void Start() {
-        spawnSection();
     }
     private void Update() {
         if (canSpawn){
